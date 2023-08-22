@@ -1,0 +1,24 @@
+OrderID,Product,Category,Price,Quantity,Customer,Date
+1001,Laptop,Electronics,899.99,2,John Smith,2023-08-10
+1002,Smartphone,Electronics,599.99,3,Jane Doe,2023-08-11
+1003,Tablet,Electronics,349.99,1,Michael Johnson,2023-08-12
+1004,Headphones,Electronics,129.99,4,Emily Brown,2023-08-12
+1005,Book,Books,19.99,5,David Wilson,2023-08-13
+1006,Chair,Furniture,89.99,2,Sarah Jones,2023-08-14
+1007,Shirt,Clothing,29.99,3,William Lee,2023-08-15
+1008,TV,Electronics,1199.99,1,Olivia Davis,2023-08-15
+1009,Guitar,Musical Instruments,299.99,1,Ethan Martinez,2023-08-16
+1010,Sneakers,Shoes,79.99,2,Ava Rodriguez,2023-08-17
+1011,Coffee Maker,Appliances,79.99,1,Liam Harris,2023-08-18
+1012,Printer,Electronics,199.99,1,Emma Turner,2023-08-19
+1013,Jeans,Clothing,49.99,2,Noah White,2023-08-19
+1014,Backpack,Accessories,39.99,3,Olivia Smith,2023-08-20
+1015,Monitor,Electronics,299.99,1,James Anderson,2023-08-21
+1016,Pencil,Stationery,0.99,10,Sophia Martinez,2023-08-22
+1017,Running Shoes,Shoes,89.99,1,Logan Taylor,2023-08-22
+1018,Watch,Accessories,149.99,1,Isabella Brown,2023-08-23
+1019,Desk,Furniture,199.99,1,Mason Johnson,2023-08-24
+1020,Blender,Appliances,69.99,1,Harper Davis,2023-08-24
+1003,Tablet,Electronics,349.99,1,Michael Johnson,2023-08-12
+1011,Coffee Maker,Appliances,79.99,1,Liam Harris,2023-08-18
+1006,Chair,Furniture,89.99,2,Sarah Jones,2023-08-14

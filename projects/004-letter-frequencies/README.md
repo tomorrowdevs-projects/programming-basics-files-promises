@@ -1,23 +1,34 @@
-# Letter Frequencies
+# Text Analysis Tool - Letter Frequencies
 
-One technique that can be used to help break some simple forms of encryption is frequency analysis. 
+The project allows users to analyze the frequency of letters in a given text or document.    
+The program will read input from the user, analyze the frequency of each letter (both uppercase and lowercase), 
+and present the results in a visually appealing format.
 
-This analysis examines the encrypted text to determine which characters are most common. 
+### Features
 
-Then it tries to map the most common letters in English,
-such as E and T, to the most commonly occurring characters in the encrypted text. 
+**User Input**.
+The program will prompt the user to enter the text or provide the path to a text file they want to analyze.
 
-Write a program that initiates this process by determining and displaying the frequencies of all of the letters in a file. 
+**Text Processing**.
+The program will clean the input text by removing punctuation, numbers, and other non-letter characters.
+Remove punctuation and non-letter characters using regular expressions or string manipulation techniques.
 
-Ignore spaces, punctuation marks, and digits as you perform this analysis. 
+**Letter Frequency Analysis**.
+The program will calculate the frequency of each letter (case-insensitive) in the cleaned text.
 
-Your program should be case insensitive, treating a and A as equivalent. 
+**Visualization**.
+The letter frequency data will be presented using a bar chart or histogram, allowing users to quickly grasp the distribution of letters in the text.
 
-The user will provide the name of the file to analyze as a command line argument. 
+**User Interaction**.
+The program will ask the user if they want to analyze another text or exit the program.
 
-Your program should display a meaningful error message if the user provides the wrong number of command line arguments, or if the program is unable
-to open the file indicated by the user.
-		 
+### Define functions
+- read file, 
+- text processing,
+- letter frequency analysis,
+- visualization, 
+- main
+
 # Documentation
 
 For this project solution you may use:
@@ -26,4 +37,4 @@ For this project solution you may use:
 
 # Deadline
 
-This project requires to be completed in a maximum of **2 hours**
+This project requires to be completed in a maximum of **4 hours**

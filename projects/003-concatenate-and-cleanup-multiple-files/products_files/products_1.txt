@@ -1,0 +1,24 @@
+Product Name, Category, Price, Stock Quantity
+Smartphone - iPhone 13 Pro, Electronics, 1099.00, 15
+Laptop - Dell XPS 15, Electronics, 1399.99, 12
+TV - Samsung 65 QLED 4K Smart TV, Electronics, 999.00, 18
+Gaming Console - PlayStation 5, Electronics, 499.99, 5
+Headphones - Sony WH-1000XM4 Wireless, Electronics, 299.00, 20
+Smartwatch - Apple Watch Series 7, Electronics, 399.99, 22
+Camera - Canon EOS Rebel T7i DSLR, Electronics, 699.00, 9
+Blender - Vitamix E310 Explorian, Appliances, 349.95, 15
+Vacuum Cleaner - Dyson V11 Animal Cordless, Appliances, 599.00, 8
+Coffee Maker - Keurig K-Elite Single Serve, Appliances, 129.99, 30
+Monitor - LG 27 Ultragear QHD Gaming, Electronics, 349.00, 10
+Backpack - North Face Borealis Classic, Fashion, 89.95, 30
+Running Shoes - Nike Air Zoom Pegasus 38, Fashion, 119.99, 25
+Wireless Speaker - JBL Flip 5, Electronics, 99.95, 18
+External Hard Drive - Seagate Backup Plus 2TB, Electronics, 79.99, 12
+Fitness Tracker - Fitbit Charge 4, Electronics, 149.95, 25
+Microwave - Panasonic NN-SN936B Countertop, Appliances, 169.99, 15
+Yoga Mat - Liforme Yoga Mat, Fitness, 149.00, 40
+Blender - Ninja Professional BL610, Appliances, 89.99, 18
+Electric Toothbrush - Oral-B Pro 1000, Personal Care, 49.95, 28
+Espresso Machine - Breville Barista Express, Appliances, 699.99, 8
+Portable Charger - Anker PowerCore 10000mAh, Electronics, 29.99, 20
+Sunglasses - Ray-Ban Classic Aviator, Fashion, 169.00, 30
