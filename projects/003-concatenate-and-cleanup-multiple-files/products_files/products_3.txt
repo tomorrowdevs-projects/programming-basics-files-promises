@@ -1,0 +1,20 @@
+Product Name, Category, Price, Stock Quantity
+Hair Dryer - Revlon One-Step Hair Dryer, Personal Care, 59.99, 30
+Monitor - LG 32 UltraGear QHD Gaming, Electronics, 349.99, 6
+Smartphone - iPhone 13 Pro, Electronics, 1099.00, 15
+Laptop - Dell XPS 15, Electronics, 1399.99, 12
+TV - Samsung 65 QLED 4K Smart TV, Electronics, 999.00, 18
+Gaming Console - PlayStation 5, Electronics, 499.99, 5
+Espresso Machine - Nespresso VertuoPlus, Appliances, 149.00, 15
+Portable Charger - Anker PowerCore 20000, Electronics, 49.99, 20
+Sunglasses - Ray-Ban Wayfarer, Fashion, 149.00, 30
+Backpack - JanSport SuperBreak, Fashion, 39.99, 25
+Drone - DJI Mini 2 Fly More Combo, Electronics, 499.00, 5
+Keyboard - Razer BlackWidow V3, Electronics, 139.99, 10
+Car Seat - Graco Extend2Fit Convertible, Baby, 199.95, 8
+Cooking Pan - T-fal E76597 Ultimate Hard Anodized, Kitchen, 39.99, 18
+Backpack - Herschel Little America, Fashion, 99.99, 25
+Drone - DJI Mavic Air 2 Fly More Combo, Electronics, 899.00, 5
+Keyboard - Logitech G Pro Mechanical, Electronics, 129.99, 10
+Car Seat - Graco Extend2Fit Convertible, Baby, 199.95, 8
+Cooking Pan - All-Clad Stainless Steel Fry Pan, Kitchen, 79.95, 18

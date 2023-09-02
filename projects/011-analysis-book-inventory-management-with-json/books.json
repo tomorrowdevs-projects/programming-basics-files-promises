@@ -1,0 +1,402 @@
+[
+  {
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "publication_year": 1960,
+    "genre": "Fiction",
+    "rating": 4.27,
+    "price": 12.99
+  },
+  {
+    "title": "1984",
+    "author": "George Orwell",
+    "publication_year": 1949,
+    "genre": "Dystopian",
+    "rating": 4.16,
+    "price": 10.95
+  },
+  {
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "publication_year": 1925,
+    "genre": "Classic",
+    "rating": 3.92,
+    "price": 9.99
+  },
+  {
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "publication_year": 1813,
+    "genre": "Romance",
+    "rating": 4.26,
+    "price": 11.50
+  },
+  {
+    "title": "Harry Potter and the Sorcerer's Stone",
+    "author": "J.K. Rowling",
+    "publication_year": 1997,
+    "genre": "Fantasy",
+    "rating": 4.47,
+    "price": 14.99
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "publication_year": 1937,
+    "genre": "Fantasy",
+    "rating": 4.28,
+    "price": 10.75
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "publication_year": 1951,
+    "genre": "Coming of Age",
+    "rating": 3.81,
+    "price": 9.25
+  },
+  {
+    "title": "The Lord of the Rings: The Fellowship of the Ring",
+    "author": "J.R.R. Tolkien",
+    "publication_year": 1954,
+    "genre": "Fantasy",
+    "rating": 4.36,
+    "price": 13.50
+  },
+  {
+    "title": "The Hunger Games",
+    "author": "Suzanne Collins",
+    "publication_year": 2008,
+    "genre": "Dystopian",
+    "rating": 4.33,
+    "price": 12.25
+  },
+  {
+    "title": "Fahrenheit 451",
+    "author": "Ray Bradbury",
+    "publication_year": 1953,
+    "genre": "Dystopian",
+    "rating": 3.98,
+    "price": 10.50
+  },
+  {
+    "title": "Alice's Adventures in Wonderland",
+    "author": "Lewis Carroll",
+    "publication_year": 1865,
+    "genre": "Fantasy",
+    "rating": 4.01,
+    "price": 8.99
+  },
+  {
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "publication_year": 1890,
+    "genre": "Gothic",
+    "rating": 4.06,
+    "price": 9.75
+  },
+  {
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "publication_year": 1851,
+    "genre": "Adventure",
+    "rating": 3.49,
+    "price": 11.25
+  },
+  {
+    "title": "The Chronicles of Narnia: The Lion, the Witch and the Wardrobe",
+    "author": "C.S. Lewis",
+    "publication_year": 1950,
+    "genre": "Fantasy",
+    "rating": 4.21,
+    "price": 12.95
+  },
+  {
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "publication_year": 1897,
+    "genre": "Gothic",
+    "rating": 3.98,
+    "price": 9.50
+  },
+  {
+    "title": "Jane Eyre",
+    "author": "Charlotte Brontë",
+    "publication_year": 1847,
+    "genre": "Gothic",
+    "rating": 4.12,
+    "price": 11.75
+  },
+  {
+    "title": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "publication_year": 2003,
+    "genre": "Mystery",
+    "rating": 3.81,
+    "price": 13.25
+  },
+  {
+    "title": "The Road",
+    "author": "Cormac McCarthy",
+    "publication_year": 2006,
+    "genre": "Dystopian",
+    "rating": 3.96,
+    "price": 11.99
+  },
+  {
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "publication_year": 2012,
+    "genre": "Mystery",
+    "rating": 4.05,
+    "price": 10.75
+  },
+  {
+    "title": "The Girl on the Train",
+    "author": "Paula Hawkins",
+    "publication_year": 2015,
+    "genre": "Thriller",
+    "rating": 3.91,
+    "price": 12.50
+  },
+  {
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "publication_year": 1988,
+    "genre": "Fantasy",
+    "rating": 3.85,
+    "price": 9.99
+  },
+  {
+    "title": "The Name of the Wind",
+    "author": "Patrick Rothfuss",
+    "publication_year": 2007,
+    "genre": "Fantasy",
+    "rating": 4.54,
+    "price": 14.25
+  },
+  {
+    "title": "The Goldfinch",
+    "author": "Donna Tartt",
+    "publication_year": 2013,
+    "genre": "Fiction",
+    "rating": 3.92,
+    "price": 13.99
+  },
+  {
+    "title": "A Game of Thrones",
+    "author": "George R.R. Martin",
+    "publication_year": 1996,
+    "genre": "Fantasy",
+    "rating": 4.45,
+    "price": 15.50
+  },
+  {
+    "title": "The Book Thief",
+    "author": "Markus Zusak",
+    "publication_year": 2005,
+    "genre": "Historical Fiction",
+    "rating": 4.37,
+    "price": 11.95
+  },
+  {
+    "title": "The Martian",
+    "author": "Andy Weir",
+    "publication_year": 2011,
+    "genre": "Science Fiction",
+    "rating": 4.40,
+    "price": 12.75
+  },
+  {
+    "title": "The Night Circus",
+    "author": "Erin Morgenstern",
+    "publication_year": 2011,
+    "genre": "Fantasy",
+    "rating": 4.04,
+    "price": 13.50
+  },
+  {
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "publication_year": 2003,
+    "genre": "Historical Fiction",
+    "rating": 4.30,
+    "price": 10.99
+  },
+  {
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "publication_year": 1890,
+    "genre": "Gothic",
+    "rating": 4.06,
+    "price": 9.75
+  },
+  {
+    "title": "Moby-Dick",
+    "author": "Herman Melville",
+    "publication_year": 1851,
+    "genre": "Adventure",
+    "rating": 3.49,
+    "price": 11.25
+  },
+  {
+    "title": "The Shadow of the Wind",
+    "author": "Carlos Ruiz Zafón",
+    "publication_year": 2001,
+    "genre": "Mystery",
+    "rating": 4.25,
+    "price": 12.99
+  },
+  {
+    "title": "The Handmaid's Tale",
+    "author": "Margaret Atwood",
+    "publication_year": 1985,
+    "genre": "Dystopian",
+    "rating": 4.10,
+    "price": 11.25
+  },
+  {
+    "title": "The Help",
+    "author": "Kathryn Stockett",
+    "publication_year": 2009,
+    "genre": "Historical Fiction",
+    "rating": 4.47,
+    "price": 9.99
+  },
+  {
+    "title": "The Pillars of the Earth",
+    "author": "Ken Follett",
+    "publication_year": 1989,
+    "genre": "Historical Fiction",
+    "rating": 4.31,
+    "price": 14.50
+  },
+  {
+    "title": "Gone with the Wind",
+    "author": "Margaret Mitchell",
+    "publication_year": 1936,
+    "genre": "Historical Fiction",
+    "rating": 4.30,
+    "price": 12.99
+  },
+  {
+    "title": "The Maze Runner",
+    "author": "James Dashner",
+    "publication_year": 2009,
+    "genre": "Dystopian",
+    "rating": 4.02,
+    "price": 10.75
+  },
+  {
+    "title": "The Lightning Thief",
+    "author": "Rick Riordan",
+    "publication_year": 2005,
+    "genre": "Fantasy",
+    "rating": 4.25,
+    "price": 9.99
+  },
+  {
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "publication_year": 1937,
+    "genre": "Fantasy",
+    "rating": 4.28,
+    "price": 10.75
+  },
+  {
+    "title": "The Catcher in the Rye",
+    "author": "J.D. Salinger",
+    "publication_year": 1951,
+    "genre": "Coming of Age",
+    "rating": 3.81,
+    "price": 9.25
+  },
+  {
+    "title": "The Ocean at the End of the Lane",
+    "author": "Neil Gaiman",
+    "publication_year": 2013,
+    "genre": "Fantasy",
+    "rating": 3.99,
+    "price": 11.50
+  },
+  {
+    "title": "The Color Purple",
+    "author": "Alice Walker",
+    "publication_year": 1982,
+    "genre": "Fiction",
+    "rating": 4.19,
+    "price": 9.75
+  },
+  {
+    "title": "The Sun Also Rises",
+    "author": "Ernest Hemingway",
+    "publication_year": 1926,
+    "genre": "Classic",
+    "rating": 3.84,
+    "price": 10.95
+  },
+  {
+    "title": "The Road",
+    "author": "Cormac McCarthy",
+    "publication_year": 2006,
+    "genre": "Dystopian",
+    "rating": 3.96,
+    "price": 11.99
+  },
+  {
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "publication_year": 2012,
+    "genre": "Mystery",
+    "rating": 4.05,
+    "price": 10.75
+  },
+  {
+    "title": "The Girl on the Train",
+    "author": "Paula Hawkins",
+    "publication_year": 2015,
+    "genre": "Thriller",
+    "rating": 3.91,
+    "price": 12.50
+  },
+  {
+    "title": "The Goldfinch",
+    "author": "Donna Tartt",
+    "publication_year": 2013,
+    "genre": "Fiction",
+    "rating": 3.92,
+    "price": 13.99
+  },
+  {
+    "title": "A Game of Thrones",
+    "author": "George R.R. Martin",
+    "publication_year": 1996,
+    "genre": "Fantasy",
+    "rating": 4.45,
+    "price": 15.50
+  },
+  {
+    "title": "The Book Thief",
+    "author": "Markus Zusak",
+    "publication_year": 2005,
+    "genre": "Historical Fiction",
+    "rating": 4.37,
+    "price": 11.95
+  },
+  {
+    "title": "The Martian",
+    "author": "Andy Weir",
+    "publication_year": 2011,
+    "genre": "Science Fiction",
+    "rating": 4.40,
+    "price": 12.75
+  },
+  {
+    "title": "The Night Circus",
+    "author": "Erin Morgenstern",
+    "publication_year": 2011,
+    "genre": "Fantasy",
+    "rating": 4.04,
+    "price": 13.50
+  }
+]
