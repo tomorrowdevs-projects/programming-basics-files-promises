@@ -22,8 +22,13 @@ Read the following chapters to the key concepts of this specific path
 #### Theory
 - [ ] [Head Command](https://www.linuxfordevices.com/tutorials/linux/head-command-in-linux)
 - [ ] [Tail Command](https://www.linuxfordevices.com/tutorials/linux/the-tail-command-in-linux)
-- 
-......
+- [ ] [Eloquent Javascript - Asynchronous Programming](https://eloquentjavascript.net/11_async.html)
+- [ ] [Javascript.info - Async](https://javascript.info/async)
+- [ ] [Binary data, files](https://javascript.info/binary)
+- [ ] [File handling in Node.js](https://www.freecodecamp.org/news/how-to-work-with-files-in-node-js/)
+- [ ] [Node.js Filesystem](https://nodejs.org/api/fs.html)
+- [ ] [Using files from web applications](https://developer.mozilla.org/en-US/docs/Web/API/File_API/Using_files_from_web_applications)
+- [ ] [Web Workers API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API)
 
 #### Syntax Reference
 - [https://javascript.info/](https://javascript.info/)
