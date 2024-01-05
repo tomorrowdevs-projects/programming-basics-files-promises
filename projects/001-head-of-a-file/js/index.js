@@ -4,6 +4,7 @@ const readline = require('readline');
 let path= 'projects/001-head-of-a-file/'
 let showNameFile = false;
 
+
 // Accetta in ingresso il percorso del file da leggere le righe da mostrare,
 // verifica che non ci siano errori nella lettura del file altrimenti emette un erroe,
 // legge il file lo divide in righe le invia a showTheLines
