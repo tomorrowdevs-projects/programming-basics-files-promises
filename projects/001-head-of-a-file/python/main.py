@@ -13,6 +13,7 @@ suggested_option = (f"{default_command} file.txt: displays the first 10 lines of
 
 
 def search_file_txt(n):
+
     file_txt = command[n]
     directory = os.path.dirname(os.path.abspath(script))
     path_file = None
