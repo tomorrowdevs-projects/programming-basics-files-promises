@@ -3,100 +3,197 @@ import os
 
 command = sys.argv
 script = os.path.basename(__file__)
-suggested_options = ("\nOptions:\nscript.py -n <number of lines> file.txt:          Change the number of lines in the "
-                     "output, add the -n (--lines) argument before the file name\nscript.py -v -n <number of lines> "
-                     "file.txt:          Display the file name before outputting the specified lines with the -v "
-                     "argument before the file name and the other options.\nscript.py -d file.txt file.txt:"
-                     "                 Display the first lines of multiple files using a single command\n"
-                     )
+default_command = f"{script} head"
+suggested_option = (f"{default_command} file.txt: displays the first 10 lines of a file;\n"
+                    f"{default_command} -n <number> file.txt: change the number of lines in the output;\n"
+                    f"{default_command} -v -n <number> file.txt: display the file name before outputting the specified "
+                    f"lines;\n"
+                    f"{default_command} -d first_file.txt second_file.txt: display the first lines of multiple files."
+                    )
 
 
-def read_lines(number, path):
-    try:
-        with open(path, 'r') as f:
-            lines = f.readlines()
+def search_file_txt(n):
+    file_txt = command[n]
+    directory = os.path.dirname(os.path.abspath(script))
+    path_file = None
 
-        called_lines = lines[:number]
+    while True:
 
-        for line in called_lines:
-            print(line)
-    except OSError:
-        print('cannot open', path)
+        if file_txt in os.listdir(directory):
+            path_file = os.path.join(directory, file_txt)
+            break
 
-    return ""
+        directory = os.path.dirname(directory)
+
+        if directory == os.path.dirname(directory):
+            break
+
+    return path_file, file_txt
 
 
-def single_file(path_file, option):
-    length_command = 3
-    if option == "-v" or option == "-d":
-        length_command += 1
-    if os.path.exists(path_file):
-        if len(command) == length_command:
-            print(read_lines(10, path_file))
+if len(command) < 3:
+    raise ValueError(f"Invalid command! Options:\n{suggested_option}")
 
-        if len(command) == length_command + 1:
-            try:
-                number = int(command[-2])
-                if number <= 0:
-                    raise ValueError("Enter number greater than zero!")
+else:
+
+    if " ".join(command[:2]) != default_command:
+        raise ValueError(f"Invalid command! Options:\n{suggested_option}")
+
+    else:
+
+        if len(command) == 3:
+
+            if command[-1] in ["-n", "-d", "-v"]:
+                raise ValueError(f"Invalid command! Options:\n{suggested_option}")
+
+            else:
+                path = search_file_txt(-1)
+
+            if path[0]:
+
+                try:
+
+                    with open(path[0], 'r') as f:
+                        lines = f.readlines()
+
+                    called_lines = lines[:10]
+
+                    for line in called_lines:
+                        print(line)
+
+                except OSError:
+                    print('cannot open', path[0])
+
+            else:
+                raise FileNotFoundError(f"{path[1]} not found!")
+
+        elif len(command) == 5:
+
+            if command[2] == "-n":
+                number = command[-2]
+
+                try:
+
+                    number = int(number)
+                    path = search_file_txt(-1)
+
+                    if number <= 0:
+                        raise ValueError("Number must be greater than zero!")
+
+                except ValueError:
+                    raise ValueError("Number must be greater than zero!")
+
+                if path[0]:
+
+                    try:
+
+                        with open(path[0], 'r') as f:
+                            lines = f.readlines()
+
+                        called_lines = lines[:number]
+
+                        for line in called_lines:
+                            print(line)
+
+                    except OSError:
+                        print('cannot open', path[0])
+
                 else:
-                    print(read_lines(number, path_file))
+                    raise FileNotFoundError(f"{path[1]} not found!")
 
-            except ValueError:
-                print("Command error!")
-                print(suggested_options)
-    else:
-        raise FileNotFoundError("File not found!")
-    return ""
+            elif command[2] == "-d":
 
+                if command[-2] in ["-n", "-d", "-v"]:
+                    raise ValueError(f"Invalid command! Options:\n{suggested_option}")
 
-def read_files():
-    if "".join(command) == script or len(command) < 3:
-        print(suggested_options)
+                else:
+                    path_1 = search_file_txt(-2)
 
-    else:
+                if path_1[0]:
 
-        if command[1] == "-v":
+                    try:
 
-            if len(command) > 3:
-                file = command[-1]
-                cwd = os.getcwd()
-                path = os.path.join(cwd, file)
+                        with open(path_1[0], 'r') as f:
+                            lines = f.readlines()
 
-                if os.path.exists(path):
-                    print(file)
-                    print(single_file(path, "-v"))
+                        called_lines = lines[:10]
+                        print(command[-2])
+
+                        for line in called_lines:
+                            print(line)
+
+                    except OSError:
+                        print('cannot open', path_1[0])
+
+                else:
+                    raise FileNotFoundError(f"{path_1[1]} not found!")
+
+                if command[-1] in ["-n", "-d", "-v"]:
+                    raise ValueError(f"Invalid command! Options:\n{suggested_option}")
+
+                else:
+                    path_2 = search_file_txt(-1)
+
+                if path_2[0]:
+
+                    try:
+
+                        with open(path_2[0], 'r') as f:
+                            lines = f.readlines()
+
+                        called_lines = lines[:10]
+                        print(command[-1])
+
+                        for line in called_lines:
+                            print(line)
+
+                    except OSError:
+                        print('cannot open', path_2[0])
+
+                else:
+                    raise FileNotFoundError(f"{path_2[1]} not found!")
 
             else:
-                print(suggested_options)
+                raise ValueError(f"Invalid command! Options:\n{suggested_option}")
 
-        if command[1] == "-n":
-            file = command[-1]
-            cwd = os.getcwd()
-            path = os.path.join(cwd, file)
-            print(single_file(path, "-n"))
+        elif len(command) == 6:
 
-        if command[1] == "-d":
+            default_command = default_command + " -v " + "-n"
+            if " ".join(command[:4]) == default_command:
+                number = command[-2]
 
-            if len(command) > 2:
-                # First file
-                file = command[-2]
-                cwd = os.getcwd()
-                path = os.path.join(cwd, file)
-                print(file)
-                print(single_file(path, "-d"))
+                try:
 
-                # Second file
-                file = command[-1]
-                cwd = os.getcwd()
-                path = os.path.join(cwd, file)
-                print(file)
-                print(single_file(path, "-d"))
+                    number = int(number)
+                    path = search_file_txt(-1)
+
+                    if number <= 0:
+                        raise ValueError("Number must be greater than zero!")
+
+                except ValueError:
+                    raise ValueError("Number must be greater than zero!")
+
+                if path[0]:
+
+                    try:
+
+                        with open(path[0], 'r') as f:
+                            lines = f.readlines()
+
+                        called_lines = lines[:number]
+                        print(command[-1])
+
+                        for line in called_lines:
+                            print(line)
+
+                    except OSError:
+                        print('cannot open', path[0])
+
+                else:
+                    raise FileNotFoundError(f"{path[1]} not found!")
 
             else:
-                print(suggested_options)
-    return ""
+                raise ValueError(f"Invalid command! Options:\n{suggested_option}")
 
-
-if __name__ == '__main__':
-    print(read_files())
+        else:
+            raise ValueError(f"Invalid command! Options:\n{suggested_option}")
