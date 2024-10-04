@@ -5,27 +5,21 @@ let filePath3 = './example3.txt';
 const numberLines = 5;
 
 readFile(filePath)
-    .then((data1) => {
-        console.log(data1.toString().split('\r\n').slice(0, 10).join('\r\n'));
-        return data1;
-    })
-    .then((data2) => {
-        // The -n option
+    .then((data) => {
+        console.log(data.toString().split('\r\n').slice(0, 10).join('\r\n')); // The first 10 lines
         console.log(
-            data2.toString().split('\r\n').slice(0, numberLines).join('\r\n')
+            data.toString().split('\r\n').slice(0, numberLines).join('\r\n') // The first 5 lines
         );
-        return data2;
-    })
-    .then((data3) => {
-        // The -v option with the name of the file
         console.log(
-            `${filePath}\n ${data3
+            // The first 3 lines
+            `${filePath}\n ${data
                 .toString()
                 .split('\r\n')
                 .slice(0, numberLines - 2)
                 .join('\r\n')}`
         );
     })
+
     .catch((error) => {
         console.log(error);
     });
