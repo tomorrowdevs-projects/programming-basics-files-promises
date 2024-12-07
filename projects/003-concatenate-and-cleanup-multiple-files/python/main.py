@@ -24,44 +24,42 @@ Define functions:
     named combined_products.txt including a single header and with each value separated with a comma.
 '''
 
-import filecmp
-from difflib import Differ
-
 def read_files(file, file2):
-    list = file.readlines()
+    list1 = file.readlines()
     list2 = file2.readlines()
-    stringlist = ''.join(list)
+    stringlist = ''.join(list1)
     stringlist2 = ''.join(list2)
     return stringlist, stringlist2
 
 def concatenate_files(file, file2):
-    list = file.readlines()
+    list1 = file.readlines()
     list2 = file2.readlines()
-    concatenateddata = list + list2
+    concatenateddata = list1 + list2
     concatenateddatastring = ''.join(concatenateddata)
     return concatenateddatastring
 
 def clean_dataset(file, file2):
-    list = file.readlines()
+    list1 = file.readlines()
     list2 = file2.readlines()
-    concatenateddata = list + list2
-    newlist = []
-    for line in concatenateddata:
-        if line not in newlist:
-            newlist.append(concatenateddata)
-    return concatenateddata
-    
-#def save_file():
+    concatenatedlists = list1
+    concatenatedlists += [line for line in list2 if line not in list1]
+    cleanconcatenatedlists = ''.join(concatenatedlists)
+    return cleanconcatenatedlists
 
+def save_file(cleanconcatenatedlists):
+    with open('projects/003-concatenate-and-cleanup-multiple-files/python/combined_products.txt', 'w') as file3:
+        file3.write(cleanconcatenatedlists)
 
 def main():
     file = open('projects/003-concatenate-and-cleanup-multiple-files/python/example.txt', 'r')
     file2 = open('projects/003-concatenate-and-cleanup-multiple-files/python/example 2.txt', 'r')
-    #stringlist, stringlist2 = read_files(file, file2)
-    #print(stringlist, "\n",stringlist2)
-    #print(concatenate_files(file, file2))
-    print(clean_dataset(file, file2))
+    stringlist, stringlist2 = read_files(file, file2)
+    print(stringlist, "\n", stringlist2)
+    print(concatenate_files(file, file2))
+    cleanconcatenatedlists = clean_dataset(file, file2)
+    print(save_file(cleanconcatenatedlists))
     file.close()
+    file2.close()
 
 if __name__ == '__main__':
     main()
