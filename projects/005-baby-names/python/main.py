@@ -1,111 +1,94 @@
 import os
 
-dataStatDict={}
-
 def readFile(filePath):
     with open(filePath,'r',encoding='utf-8') as file:
         dataDict={}
         for line in file.readlines()[1:]:
             line=line.strip('\n').replace('"','').split(',')
-            if line[0] in dataDict:
-                if line[3] in dataDict[line[0]]:
-                    dataDict[line[0]][line[3]][line[1]]=float(line[2])*100
+            year=int(line[0])
+            sex=line[3]
+            name=line[1]
+            percent=float(line[2])*100
+            if year in dataDict:
+                if sex in dataDict[year]:
+                    dataDict[year][sex][name]=percent
                 else:
-                    dataDict[line[0]][line[3]]={line[1]:float(line[2])*100}
+                    dataDict[year][sex]={name:percent}
             else:
-                dataDict[line[0]]={line[3]:{line[1]:float(line[2])*100}}
+                dataDict[year]={sex:{name:percent}}
     return dataDict
 
-def nameDiversityAnalysis(dataDict):
-    yrNamesNrDict={}
-    for year in dataDict:
-        yrNamesNrDict[year]={}
-        for sex in dataDict[year]:
-            yrNamesNrDict[year][sex]=len(dataDict[year][sex])
-    return yrNamesNrDict
+def askYear(dataDict):
+    inputOk=False
+    while not inputOk:
+        try:
+            year=int(input('Enter the year on wich perform the analysis: '))
+        except:
+            print('Only numeric values!')
+        else:
+            if year in dataDict.keys():
+                inputOk=True
+            else:
+                print('Only years between {} and {}').format(min(dataDict.keys()),max(dataDict.keys()))
+        finally:
+            pass
+    return year
 
-def nameLenghtAnalysis(dataDict):
-    yrNamesLenDict={}
-    for year in dataDict:
-        yrNamesLenDict[year]={}
-        for sex in dataDict[year]:
-            meanLen=0
-            for name in dataDict[year][sex].keys():
-                meanLen+=len(name)
-            yrNamesLenDict[year][sex]=int(meanLen/len(dataDict[year][sex]))
-    return yrNamesLenDict
+def nameDiversityAnalysis(dataDict,year):
+    for sex in dataDict[year]:
+        print('In {}, {} uniques names of {}s have been registered.'.format(year,len(dataDict[year][sex]),sex))
+    return
 
-def yrPopularAnalysis(dataDict):
-    yrNamesRank={}
+def nameLengthAnalysis(dataDict):
     for year in dataDict:
-        yrNamesRank[year]={}
         for sex in dataDict[year]:
-            yrNamesRank[year][sex]={}
-            names=dataDict[year][sex].keys()
-            frequency=dataDict[year][sex].values()
-            pairedData=sorted(zip(names,frequency),key=lambda x:x[1])
-            i=1
-            for elem in pairedData:
-                if i<11:
-                    yrNamesRank[year][sex][i]=elem[0]
-                    i+=1
-                else:
-                    break
-    return yrNamesRank
-
-def firstLetterAnalysis(dataDict):
-    firstLetterRank={'boy':{},'girl':{}}
-    firstLetterFreq={'boy':{},'girl':{}}
-    for sex in firstLetterFreq:
-        for letter in 'abcdefghijklmnopqrstuvwxyz':
-            firstLetterFreq[sex][letter]=0
-    for sex in firstLetterFreq:
-        for year in dataDict:
+            meanLegth=0
             for name in dataDict[year][sex]:
-                firstLetterFreq[sex][name[0].lower()]+=dataDict[year][sex][name]
-    for sex in firstLetterFreq:
-        pairedData=sorted(zip(firstLetterFreq[sex].keys(),firstLetterFreq[sex].values()),key=lambda x:x[1])
+                meanLegth+=len(name)
+            meanLegth=meanLegth/len(dataDict[year][sex])
+            print('{} - {}: {}'.format(year,sex,meanLegth))
+
+def yrPopularAnalysis(dataDict,year):
+    print("""Here's the name rank for {}""".format(year))
+    for sex in dataDict[year]:
+        print("""{}s' rank""".format(sex))
+        names=dataDict[year][sex].keys()
+        frequency=dataDict[year][sex].values()
+        pairedData=sorted(zip(names,frequency),key=lambda x:x[1])
         i=1
         for elem in pairedData:
-            if i<6:
-                firstLetterRank[sex][i]=elem[0]
+            if i<11:
+                print("""{} - {}""".format(i,elem[0]))
                 i+=1
             else:
                 break
-    return firstLetterRank
 
-def lastLetterAnalysis(dataDict):
-    firstLetterRank={'boy':{},'girl':{}}
-    firstLetterFreq={'boy':{},'girl':{}}
-    for sex in firstLetterFreq:
+def letterAnalysis(dataDict,index):
+    for sex in ['boy','girl']:
+        print("""{}s' rank""".format(sex))
+        firstLetterFreq={}
         for letter in 'abcdefghijklmnopqrstuvwxyz':
-            firstLetterFreq[sex][letter]=0
-    for sex in firstLetterFreq:
+            firstLetterFreq[letter]=0
+
         for year in dataDict:
             for name in dataDict[year][sex]:
-                firstLetterFreq[sex][name[-1].lower()]+=dataDict[year][sex][name]
-    for sex in firstLetterFreq:
-        pairedData=sorted(zip(firstLetterFreq[sex].keys(),firstLetterFreq[sex].values()),key=lambda x:x[1])
+                firstLetterFreq[name[index].lower()]+=dataDict[year][sex][name]
+
+        pairedData=sorted(zip(firstLetterFreq.keys(),firstLetterFreq.values()),key=lambda x:x[1])
         i=1
         for elem in pairedData:
             if i<6:
-                firstLetterRank[sex][i]=elem[0]
+                print("""{} - {}""".format(i,elem[0]))
                 i+=1
             else:
                 break
-    return firstLetterRank
 
 def decadePopularAnalysis(dataDict):
-    yrNamesRank={}
     decadeDataDict={}
-    yrList=[]
-    for year in dataDict:
-        yrList.append(int(year))
-
-    decade=min(yrList)
+    decade=min(dataDict.keys())
     decadeDataDict[decade]={}
     for year in dataDict:
-        if int(year)-decade>9:
+        if year-decade>9:
             decade+=10
             decadeDataDict[decade]={}
 
@@ -118,25 +101,22 @@ def decadePopularAnalysis(dataDict):
                     decadeDataDict[decade][sex][name]=dataDict[year][sex][name]
         
     for decade in decadeDataDict:
-        yrNamesRank[decade]={}
+        print("""{}'s""".format(decade))
         for sex in decadeDataDict[decade]:
-            yrNamesRank[decade][sex]={}
+            rankString='{}s: '.format(sex)
             names=decadeDataDict[decade][sex].keys()
             frequency=decadeDataDict[decade][sex].values()
             pairedData=sorted(zip(names,frequency),key=lambda x:x[1])
             i=1
             for elem in pairedData:
                 if i<6:
-                    yrNamesRank[decade][sex][i]=elem[0]
+                    rankString=rankString+'{} - {}, '.format(i,elem[0])
                     i+=1
                 else:
                     break
-    return yrNamesRank
-
-# def writeToCsv(dataDict,fileName,filePath):
-#     with open(os.path.join(filePath,fileName),'w',encoding='utf-8') as file:
-#         header='year,sex,'
-#         for year
+            rankString=rankString.rstrip(', ')
+            print(rankString)
+    return
 
 def main():
     filePath=input('Enter the path where the name dataset is saved: ')
@@ -145,13 +125,30 @@ def main():
         if filePath=='':
             return
     dataDict=readFile(filePath)
-    dataStatDict['diversity analysis']=nameDiversityAnalysis(dataDict)
-    dataStatDict['name lenght analysis']=nameLenghtAnalysis(dataDict)
-    dataStatDict['top 10 analysis']=yrPopularAnalysis(dataDict)
-    dataStatDict['first letter analysis']=firstLetterAnalysis(dataDict)
-    dataStatDict['last letter analysis']=lastLetterAnalysis(dataDict)
-    dataStatDict['decade top 5 analysis']=decadePopularAnalysis(dataDict)
-    print(dataStatDict['top 10 analysis'])
+
+    operation=''
+    operation=input("""You can perform:\n-Diversity analysis [1]\n-Name length analysis [2]\n-Top 10 analysis [3]\n-First letter analysis [4]\n-Last letter analysis [5]\n-Top 5 decade analysis [6]\nEnter the number of operation you want to perform or enter 0 to quit: """)
+    while operation!='0':
+        while len(operation)==0 and not operation in ['0','1','2','3','4','5','6']:
+            operation=input("""You can perform:\n-Diversity analysis [1]\n-Name length analysis [2]\n-Top 10 analysis [3]\n-First letter analysis [4]\n-Last letter analysis [5]\n-Top 5 decade analysis [6]\nEnter the number of operation you want to perform: """)
+
+        if operation=='0':
+            return
+        elif operation=='1':
+            year=askYear(dataDict)
+            nameDiversityAnalysis(dataDict,year)
+        elif operation=='2':
+            nameLengthAnalysis(dataDict)
+        elif operation=='3':
+            year=askYear(dataDict)
+            yrPopularAnalysis(dataDict,year)
+        elif operation=='4':
+            letterAnalysis(dataDict,0)
+        elif operation=='5':
+            letterAnalysis(dataDict,-1)
+        elif operation=='6':
+            decadePopularAnalysis(dataDict)
+        operation=input("""You can perform:\n-Diversity analysis [1]\n-Name length analysis [2]\n-Top 10 analysis [3]\n-First letter analysis [4]\n-Last letter analysis [5]\n-Top 5 decade analysis [6]\nEnter the number of operation you want to perform or enter 0 to quit: """)
 
 if __name__=='__main__':
     main()
