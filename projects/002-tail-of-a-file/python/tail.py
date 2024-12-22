@@ -41,7 +41,11 @@ def main():
                 else:
                     text=file.readlines()
                     if startingLine==None:
-                        startingLine=len(text)-linesToPrint+1
+                        startingLine=len(text)-min(linesToPrint,len(text))+1
+                    else:
+                        if startingLine>len(text):
+                            print('warning: {} has only {} lines'.format(fileName,len(text)))
+                            continue
                     
                     for i in range(startingLine-1,len(text)):
                             print(text[i])
